@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "tasks": [
+      {
+        "label": "Open CANopenEditor",
+        "type": "shell",
+        "command": "mono ./CANopenEditor-v4/net481/EDSEditor.exe"
+      }
+    ]
+  }

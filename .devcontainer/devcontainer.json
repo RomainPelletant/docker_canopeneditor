@@ -1,0 +1,9 @@
+{
+	"name": "canopeneditor",
+	"build": {
+        "context": "..",
+        "dockerfile": "./Dockerfile"
+    },
+	"forwardPorts": [22, 80, 443],
+    "postStartCommand": "mono ./CANopenEditor-v4/net481/EDSEditor.exe"
+}
