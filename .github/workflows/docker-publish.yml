@@ -40,6 +40,9 @@ jobs:
         with:
           dockerfile: .devcontainer/Dockerfile
 
+      - name: Test CANopenEditor OD conversion inside docker
+        run: bash test/test_OD_output.sh
+
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
