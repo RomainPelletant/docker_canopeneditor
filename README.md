@@ -1,6 +1,7 @@
 # Docker CANopenEditor
 
-This repository contains a docker devcontainer to launch CANopenEditor via x11 server.
+This repository provides a Docker image bundling [CANopenEditor](https://github.com/robincornelius/canopeneditor), a GUI tool for editing CANopen EDS and DCF files.
+Integration in VSCode is provided inside DevContainer if you are not confident with docker commands.
 
 ## Requirements
 
@@ -12,6 +13,14 @@ This repository contains a docker devcontainer to launch CANopenEditor via x11 s
 
 - MacOS (XQuartz as x11 client)
 - Linux (Ubuntu 24.04)
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+Note: This Docker image contains canopeneditor, which is licensed under the GNU General Public License v3 (GPLv3). You can find its source code and license here:
+https://github.com/CANopenNode/CANopenEditor
+
+No modifications have been made to canopeneditor in this image.
 
 ## Sample
 
