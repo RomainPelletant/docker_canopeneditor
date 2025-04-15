@@ -2,7 +2,7 @@
 
 [![Docker](https://github.com/RomainPelletant/docker_canopeneditor/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/RomainPelletant/docker_canopeneditor/actions/workflows/docker-publish.yml)
 
-This repository provides a Docker image bundling [CANopenEditor](https://github.com/robincornelius/canopeneditor), a GUI tool for editing CANopen EDS and DCF files.
+This repository provides a Docker image bundling [CANopenEditor](https://github.com/CANopenNode/CANopenEditor), a GUI tool for editing CANopen EDS and DCF files.
 Integration in VSCode is provided inside DevContainer if you are not confident with docker commands.
 
 ## Requirements
