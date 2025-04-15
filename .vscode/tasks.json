@@ -1,10 +1,59 @@
 {
-    "version": "1.0.0",
-    "tasks": [
-      {
-        "label": "Open CANopenEditor",
-        "type": "shell",
-        "command": "mono ./CANopenEditor-v4/net481/EDSEditor.exe"
-      }
-    ]
-  }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open CANopenEditor",
+      "type": "shell",
+      "command": "mono ./CANopenEditor-v4/net481/EDSEditor.exe"
+    },
+    {
+      "label": "Convert EDS",
+      "type": "shell",
+      "command": "mono",
+      "args": [
+        "./CANopenEditor-v4/net481/EDSSharp.exe",
+        "--infile", "${input:edsFile}",
+        "--outfile", "${input:outFile}",
+        "--type", "${input:type}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "edsFile",
+      "type": "promptString",
+      "description": "Chemin du fichier EDS à convertir",
+      "default": "./input.eds"
+    },
+    {
+      "id": "outFile",
+      "type": "promptString",
+      "description": "Chemin du fichier de sortie",
+      "default": "./output.h"
+    },
+    {
+      "id": "type",
+      "type": "pickString",
+      "description": "Format de sortie",
+      "options": ["ElectronicDataSheet",
+                  "DeviceConfigurationFile",
+                  "CanOpenNode",
+                  "CanOpenNodeV4",
+                  "CanOpenXDDv1.0",
+                  "CanOpenNetworkv1.0",
+                  "CanOpenXDDv1.1",
+                  "CanOpenXDDv1.1stripped",
+                  "CanOpenXDCv1.1",
+                  "CanOpenNetworkXDDv1.1",
+                  "CanOpenNetworkXDCv1.1",
+                  "CanOpenNodeProtobuf(json)",
+                  "CanOpenNodeProtobuf(binary)",
+                  "DocumentationHTML",
+                  "DocumentationMarkup",
+                  "NetworkPDOReport",
+                ],
+      "default": "CanOpenNodeV4"
+    }
+  ]
+}
