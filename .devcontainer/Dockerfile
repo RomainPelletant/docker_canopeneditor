@@ -12,7 +12,7 @@ RUN apt-get -y update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-COPY ../CANopenEditor-v4 /opt/CANopenEditor-v4/
+COPY ../CANopenEditor-v4/ /opt/CANopenEditor-v4/
 COPY ../scripts /opt/CANopenEditor-v4/scripts/
 
 RUN chmod -R +x /opt/CANopenEditor-v4/scripts/
