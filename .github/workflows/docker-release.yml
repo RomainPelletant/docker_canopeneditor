@@ -105,14 +105,6 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
-      - name: Append Docker image tags to CHANGELOG.md
-        run: |
-          echo "" >> CHANGELOG.md
-          echo "## Docker Images" >> CHANGELOG.md
-          for tag in ${{ steps.meta.outputs.tags }}; do
-            echo "- \`docker pull $tag\`" >> CHANGELOG.md
-          done
-
       - name: Create release
         uses: actions/create-release@v1
         id: create_release
