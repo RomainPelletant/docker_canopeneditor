@@ -5,6 +5,9 @@
 This repository provides a Docker image bundling [CANopenEditor](https://github.com/CANopenNode/CANopenEditor), a GUI tool for editing CANopen EDS and DCF files.
 Integration in VSCode is provided inside DevContainer if you are not confident with docker commands.
 
+- Supported architectures:
+linux/amd64, linux/arm64
+
 ## Requirements
 
 - Docker (or similar)
@@ -35,19 +38,19 @@ Or manually:
 
 ```shell
 # Inside the container
-mono ./CANopenEditor-v4/net481/EDSEditor.exe
+EDSEditor
 ```
 
 ### How to use (CLI)
 
 ```shell
 # Inside the container
-mono ./CANopenEditor-v4/net481/EDSSharp.exe --infile <eds_or_xdd_file> --outfile <output_filenam> --type <type_selected>
+EDSSharp --infile <eds_or_xdd_file> --outfile <output_filenam> --type <type_selected>
 ```
 Example:
 ```shell
 # Inside the container
-mono ./CANopenEditor-v4/net481/EDSSharp.exe --infile demoDevice.xdd --outfile OD --type CanOpenNodeV4
+EDSSharp --infile demoDevice.xdd --outfile OD --type CanOpenNodeV4
 ```
 
 Exporter types:
