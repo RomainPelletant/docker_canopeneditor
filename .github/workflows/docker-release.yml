@@ -1,4 +1,4 @@
-name: Docker build, test, push & release
+name: Docker build, test, sign, push & release
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -112,7 +112,7 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: release_${{ github.ref }}
+          release_name: ${{ github.ref }}
           tag_name: ${{ github.ref }}
           body_path: CHANGELOG.md
         env:
