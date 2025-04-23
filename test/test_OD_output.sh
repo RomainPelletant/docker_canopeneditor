@@ -10,7 +10,7 @@ rm -f test/OD.*
 docker run --rm \
   -v "$PWD:/workdir" \
   canopeneditor \
-  mono ./CANopenEditor-v4/net481/EDSSharp.exe \
+  EDSSharp \
     --infile ./demoDevice.xdd \
     --outfile ./test/OD \
     --type CanOpenNodeV4
