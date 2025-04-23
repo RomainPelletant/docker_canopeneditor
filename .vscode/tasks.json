@@ -4,14 +4,13 @@
     {
       "label": "Open CANopenEditor",
       "type": "shell",
-      "command": "mono ./CANopenEditor-v4/net481/EDSEditor.exe"
+      "command": "EDSEditor"
     },
     {
       "label": "Convert EDS",
       "type": "shell",
-      "command": "mono",
+      "command": "EDSSharp",
       "args": [
-        "./CANopenEditor-v4/net481/EDSSharp.exe",
         "--infile", "${input:edsFile}",
         "--outfile", "${input:outFile}",
         "--type", "${input:type}"
