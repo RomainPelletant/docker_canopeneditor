@@ -5,18 +5,56 @@
 This repository provides a Docker image bundling [CANopenEditor](https://github.com/CANopenNode/CANopenEditor), a GUI tool for editing CANopen EDS and DCF files.
 Integration in VSCode is provided inside DevContainer if you are not confident with docker commands.
 
+It provides a way to run CANopenEditor on all platforms (Linux, MacOS, Windows) with mono, including the GUI via x11 for development or CI purpose.
+
+![screenshot_GUI](doc/images/screenshot_GUI.png)
+
 - Supported architectures:
 linux/amd64, linux/arm64
+
+## Registry
+
+Container registry is available [here](https://github.com/RomainPelletant/docker_canopeneditor/pkgs/container/docker_canopeneditor)
 
 ## Requirements
 
 - Docker (or similar)
-- VSCode with devcontainer extension installed
-- x11 client
+- VSCode with devcontainer extension installed (optional)
+- x11 client (XQuartz for MacOS for example)
+
+## Getting started (without VSCode & devcontainer)
+
+1. Pull the docker image
+```shell
+docker pull ghcr.io/romainpelletant/docker_canopeneditor:latest
+```
+2. Run docker image
+```shell
+docker run --rm -it -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix ghcr.io/romainpelletant/docker_canopeneditor:latest
+```
+3. Launch CANopenEditor GUI or CLI
+```shell
+EDSEditor
+```
+```shell
+EDSSharp
+```
+For more information, please refer to the dedicated section [How to use (CLI)](#how-to-use-cli)
+
+## Getting started in VSCode & devcontainer
+
+⚠️ Ensure devcontainer extension is installed in VSCode
+1. Clone this repository
+2. Open the repository folder in VSCode (open folder)
+3. Click on "Reopen in devcontainer"
+4. Cmd + MAJ + P
+5. Run The GUI (EDSEditor) or the conversion tasks (EDSSharp)
+
+![screenshot_vscode](doc/images/screenshot_vscode_tasks.png)
 
 ## Tested
 
-- MacOS (XQuartz as x11 client)
+- MacOS (XQuartz as x11 client) / Apple silicon & Intel
 - Linux (Ubuntu 24.04)
 
 ## License
